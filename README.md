@@ -2,6 +2,12 @@
 
 ## Design Decisions
 
+- Using Ruby 3.2.3 as that is the version supported by the default Github Actions container image
+- Using [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to seperate the concerns and structure the project
+- For such a simple CLI interface no CLI gem is required
+- The concepts of a robot and table are contained purely on the presentation layer. In the entities they will be the Simulation and Grid
+- Following the [Better Specs Best Practises](https://www.betterspecs.org/)
+
 ## Description
 
 - The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
