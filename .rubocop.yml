@@ -1,2 +1,7 @@
+plugins: rubocop-rspec
+
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 75
