@@ -3,10 +3,10 @@
 class PlacementCommand
   attr_accessor :x_coord, :y_coord, :direction
 
-  def initialize(direction, x_coord, y_coord)
+  def initialize(x_coord, y_coord, direction)
+    @x_coord = x_coord.to_i
+    @y_coord = y_coord.to_i
     @direction = direction
-    @x_coord = x_coord
-    @y_coord = y_coord
   end
 
   def run!(simulation)

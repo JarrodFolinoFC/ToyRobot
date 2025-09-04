@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require_relative '../../lib/application/command_invoker'
-require_relative '../../lib/application/commands/placement_command'
-require_relative '../../lib/models/simulation'
-require_relative '../../lib/models/grid'
+require 'application/command_invoker'
+require 'application/commands/placement_command'
+require 'models/simulation'
+require 'models/grid'
 
 RSpec.describe CommandInvoker do
   let(:simulation) { Simulation.new(grid: Grid.new) }
 
-  describe '#run' do
+  describe '#run!' do
     before do
-      invoker = described_class.new(PlacementCommand.new('NORTH', 1, 2))
+      invoker = described_class.new(PlacementCommand.new(1, 2, 'NORTH'))
       invoker.run!(simulation)
     end
 
@@ -20,9 +20,9 @@ RSpec.describe CommandInvoker do
     it { expect(simulation.direction).to eq('NORTH') }
   end
 
-  describe '#run with invalid command' do
+  describe '#run! with invalid command' do
     before do
-      invoker = described_class.new(PlacementCommand.new('INVALID', 1, 2))
+      invoker = described_class.new(PlacementCommand.new(1, 2, 'INVALID'))
       invoker.run!(simulation)
     end
 

@@ -19,6 +19,8 @@
   - try the command on a dup object
   - check if it is valid
   - if it is you run on the real object
+- Created a contract for the commands
+
 
 ## Todos
 
