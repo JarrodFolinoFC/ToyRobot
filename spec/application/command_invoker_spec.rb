@@ -11,7 +11,7 @@ RSpec.describe CommandInvoker do
 
   describe '#run!' do
     before do
-      invoker = described_class.new(PlacementCommand.new(1, 2, 'NORTH'))
+      invoker = described_class.new(command: PlacementCommand.new(1, 2, 'NORTH'))
       invoker.run!(simulation)
     end
 
@@ -22,7 +22,7 @@ RSpec.describe CommandInvoker do
 
   describe '#run! with invalid command' do
     before do
-      invoker = described_class.new(PlacementCommand.new(1, 2, 'INVALID'))
+      invoker = described_class.new(command: PlacementCommand.new(1, 2, 'INVALID'))
       invoker.run!(simulation)
     end
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FileSource
-  def initialize(file_path)
+  def initialize(file_path:)
     @file_path = file_path
   end
 

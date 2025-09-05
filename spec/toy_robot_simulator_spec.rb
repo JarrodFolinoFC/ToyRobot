@@ -14,8 +14,7 @@ RSpec.describe ToyRobotSimulator do
     )
   end
 
-  let(:fixture_path) { "#{__dir__}/fixtures/simple.txt" }
-  let(:input_source) { FileSource.new(fixture_path) }
+  let(:input_source) { FileSource.new(file_path: "#{__dir__}/fixtures/simple.txt") }
   let(:output_writer) { InMemoryWriter.new }
 
   describe '#run!' do

@@ -13,7 +13,7 @@ class ToyRobotSimulator
   def run!
     @input_source.build.each do |line|
       command = @command_factory.build(line.strip)
-      message = CommandInvoker.new(command).run!(@simulation)
+      message = CommandInvoker.new(command: command).run!(@simulation)
       @output_source.write(message) if message
     end
   end
