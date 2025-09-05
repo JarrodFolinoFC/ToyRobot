@@ -9,10 +9,12 @@ require_relative './application/commands/move_command'
 require_relative './application/commands/help_command'
 require_relative './models/simulation'
 require_relative './models/grid'
+require_relative './infrastructure/std_out_writer'
+require_relative './toy_robot_simulator'
 
 class ToyRobotSimulatorFactory
   # rubocop:disable Metrics/MethodLength
-  def self.build_default_instance(input_source)
+  def self.build_default_instance(input_source:, output_writer:)
     simulation = Simulation.new(grid: Grid.new)
     commands = [
       {
@@ -41,7 +43,8 @@ class ToyRobotSimulatorFactory
       }
     ]
     command_factory = CommandFactory.new(commands)
-    ToyRobotSimulator.new(input_source, simulation, command_factory)
+    ToyRobotSimulator.new(input_source: input_source, output_source: output_writer, simulation: simulation,
+                          command_factory: command_factory)
   end
   # rubocop:enable Metrics/MethodLength
 end
