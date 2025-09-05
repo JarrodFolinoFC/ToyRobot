@@ -12,4 +12,8 @@ class Grid
     @height = height
     @width = width
   end
+
+  def to_s
+    "Grid(height: #{@height}, width: #{@width})"
+  end
 end

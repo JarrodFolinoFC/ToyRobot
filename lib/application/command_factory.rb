@@ -3,13 +3,8 @@
 require_relative './commands/placement_command'
 
 class CommandFactory
-  def initialize
-    @command_mappings = [
-      {
-        pattern: /PLACE\s(\d+),(\d+),(NORTH|SOUTH|EAST|WEST)/,
-        command_class: PlacementCommand
-      }
-    ]
+  def initialize(command_mappings)
+    @command_mappings = command_mappings
   end
 
   def build(input)

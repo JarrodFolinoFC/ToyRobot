@@ -1,0 +1,30 @@
+TOY ROBOT SIMULATOR - HELP
+==========================
+AVAILABLE COMMANDS:
+
+PLACE X,Y,F
+  - Places the robot on the table at position X,Y facing F direction
+  - X and Y must be between 0 and 4
+  - F must be NORTH, SOUTH, EAST or WEST
+  - Example: PLACE 0,0,NORTH
+
+MOVE
+  - Moves the robot one unit forward in the direction it's facing
+  - Movement that would cause the robot to fall will be ignored
+
+LEFT
+  - Rotates the robot 90 degrees counter-clockwise
+  - Example: NORTH -> WEST -> SOUTH -> EAST -> NORTH
+
+RIGHT
+  - Rotates the robot 90 degrees clockwise
+  - Example: NORTH -> EAST -> SOUTH -> WEST -> NORTH
+
+REPORT
+  - Outputs the robot's current position and direction
+  - Format: X,Y,F
+  - Example output: 0,1,NORTH
+
+HELP
+  - Shows this help message
+
