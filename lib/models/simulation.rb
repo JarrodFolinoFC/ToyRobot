@@ -27,4 +27,8 @@ class Simulation
     @y_coord = y_coord
     @direction = direction
   end
+
+  def to_s
+    "Simulation(grid: #{grid}, x_coord: #{x_coord}, y_coord: #{y_coord}, direction: #{direction})"
+  end
 end

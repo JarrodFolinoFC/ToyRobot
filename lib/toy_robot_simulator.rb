@@ -1,23 +1,19 @@
 # frozen_string_literal: true
 
-require_relative './application/command_factory'
 require_relative './application/command_invoker'
-require_relative './infrastructure/stdin_source'
-require_relative './models/simulation'
-require_relative './models/grid'
 
 class ToyRobotSimulator
-  def initialize(input_source)
+  def initialize(input_source, simulation, command_factory)
     @input_source = input_source
-    @simulation = Simulation.new(grid: Grid.new)
-    @command_factory = CommandFactory.new
+    @simulation = simulation
+    @command_factory = command_factory
   end
 
   def run!
     @input_source.build.each do |line|
-      command = CommandFactory.new.build(line.strip)
-      CommandInvoker.new(command).run!(@simulation)
-      puts @simulation
+      command = @command_factory.build(line.strip)
+      output = CommandInvoker.new(command).run!(@simulation)
+      puts output if output
     end
   end
 end
