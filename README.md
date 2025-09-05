@@ -25,7 +25,8 @@
 
 ### Trade Offs
 
-- No explict interfaces as this is against Ruby standard conventions
+- No explict interfaces or abstract classes as this is against Ruby standard conventions
+- The way that the input with params on the CLI (PLACE 2,3,NORTH) gets parsed and parse in as args made using named params for the command objects not possible (it is used everywhere else)
 
 
 #### Command Contract

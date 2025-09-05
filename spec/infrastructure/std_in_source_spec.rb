@@ -4,7 +4,7 @@ require 'spec_helper'
 require_relative '../../lib/infrastructure/std_in_source'
 
 RSpec.describe StdInSource do
-  subject(:source) { described_class.new(io) }
+  subject(:source) { described_class.new(stdin: io) }
 
   let(:input_string) { "foo\nbar\nbaz\n" }
   let(:io) { StringIO.new(input_string) }

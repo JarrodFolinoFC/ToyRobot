@@ -18,15 +18,14 @@ end
 
 RSpec.describe CommandFactory do
   subject(:factory) do
-    described_class.new(
+    described_class.new(command_mappings:
       [{
         pattern: /^TESTCOMMAND$/,
         command_class: TestCommand
       }, {
         pattern: /TESTCOMMANDWITHARGS\s(\d+),(\d+),(\w+)/,
         command_class: TestCommandWithArgs
-      }]
-    )
+      }])
   end
 
   describe '#build' do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class StdInSource
-  def initialize(stdin)
+  def initialize(stdin:)
     @stdin = stdin
   end
 

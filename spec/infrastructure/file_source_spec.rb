@@ -4,7 +4,7 @@ require 'spec_helper'
 require_relative '../../lib/infrastructure/file_source'
 
 RSpec.describe FileSource do
-  subject(:source) { described_class.new(fixture_path) }
+  subject(:source) { described_class.new(file_path: fixture_path) }
 
   let(:fixture_path) { "#{__dir__}/../fixtures/simple.txt" }
 

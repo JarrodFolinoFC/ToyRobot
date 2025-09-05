@@ -16,7 +16,7 @@ class CLI
 
     "
     ToyRobotSimulatorFactory.build_default_instance(
-      input_source: StdInSource.new($stdin), output_writer: StdOutWriter.new
+      input_source: StdInSource.new(stdin: $stdin), output_writer: StdOutWriter.new
     ).run!
   end
 end

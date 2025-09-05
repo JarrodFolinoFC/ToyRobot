@@ -3,7 +3,7 @@
 require_relative './commands/placement_command'
 
 class CommandFactory
-  def initialize(command_mappings)
+  def initialize(command_mappings:)
     @command_mappings = command_mappings
   end
 

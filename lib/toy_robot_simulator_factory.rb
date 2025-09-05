@@ -42,7 +42,7 @@ class ToyRobotSimulatorFactory
         command_class: HelpCommand
       }
     ]
-    command_factory = CommandFactory.new(commands)
+    command_factory = CommandFactory.new(command_mappings: commands)
     ToyRobotSimulator.new(input_source: input_source, output_source: output_writer, simulation: simulation,
                           command_factory: command_factory)
   end

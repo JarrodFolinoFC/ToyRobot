@@ -3,7 +3,7 @@
 class CommandInvoker
   attr_reader :command
 
-  def initialize(command)
+  def initialize(command:)
     @command = command
   end
 
