@@ -1,5 +1,31 @@
 # ToyRobot
 
+## Usage
+
+The Toy Robot Simulator can be run in two ways:
+
+### Interactive Mode (STDIN)
+
+Run the simulator without any arguments to enter commands interactively:
+
+```bash
+bin/toy_robot
+```
+
+### File Mode
+
+Run the simulator with a file path to process commands from a file:
+
+```bash
+bin/toy_robot spec/fixtures/simple.txt
+```
+
+## Flow Chart
+
+The following flow chart illustrates the execution flow of the ToyRobot application:
+
+![ToyRobot Flow Chart](docs/flow_chart.png)
+
 ## Design Decisions
 
 ### Tooling
@@ -28,13 +54,6 @@
 - No explict interfaces or abstract classes as this is against Ruby standard conventions
 - The way that the input with params on the CLI (PLACE 2,3,NORTH) gets parsed and parse in as args made using named params for the command objects not possible (it is used everywhere else)
 
-
 #### Command Contract
+
 See [docs/command_pattern.md](docs/command_pattern.md) for details on the Command Pattern implementation and contract structure.
-
-
-## Todos
-
-- `require 'active_model'` change to only require validations
-- add int test that reads from a file
-
