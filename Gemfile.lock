@@ -28,6 +28,8 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     drb (2.2.3)
+    factory_bot (6.5.5)
+      activesupport (>= 6.1.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -100,6 +102,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel
   debug (>= 1.0.0)
+  factory_bot
   rspec
   rubocop
   rubocop-rspec

@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 gem 'activemodel'
+gem 'factory_bot', group: :test
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-rspec', require: false

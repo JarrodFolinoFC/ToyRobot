@@ -48,7 +48,7 @@ The following flow chart illustrates the execution flow of the ToyRobot applicat
 - Created a contract for the commands [docs/command_pattern.md](docs/command_pattern.md)
 - Not using any advance Ruby meta programming as we want to display good OO design using SOLID principles
 - Command intepretation and command execution are seperate class
-- No FactoryBot for testing but almost at a point where I would introduce it
+- Using FactoryBot for test data creation to reduce boilerplate and improve test maintainability
 
 ### Trade Offs
 
