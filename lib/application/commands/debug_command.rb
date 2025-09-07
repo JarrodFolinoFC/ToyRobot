@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ReportCommand
+class DebugCommand
   def run!(simulation)
     simulation.to_s
   end

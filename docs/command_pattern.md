@@ -10,7 +10,7 @@ The ToyRobotSimulator project implements a clear contract for the Command patter
 
    - Takes a `Simulation` object as its only parameter
    - Performs the command's action on the simulation
-   - Returns `nil` or output string (for commands like `ReportCommand` and `HelpCommand`)
+   - Returns `nil` or output string (for commands like `DebugCommand` and `HelpCommand`)
 
 2. Command constructors must match the capturing groups from their regex pattern:
    - Simple commands (like `LeftCommand`) need a no-argument constructor
