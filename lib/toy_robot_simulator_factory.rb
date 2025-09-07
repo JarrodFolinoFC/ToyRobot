@@ -4,9 +4,9 @@ require_relative './application/command_factory'
 require_relative './application/commands/placement_command'
 require_relative './application/commands/left_command'
 require_relative './application/commands/right_command'
-require_relative './application/commands/report_command'
 require_relative './application/commands/move_command'
 require_relative './application/commands/help_command'
+require_relative './application/commands/print_command'
 require_relative './models/simulation'
 require_relative './models/grid'
 require_relative './infrastructure/std_out_writer'
@@ -31,7 +31,7 @@ class ToyRobotSimulatorFactory
       },
       {
         pattern: /^REPORT$/,
-        command_class: ReportCommand
+        command_class: PrintCommand
       },
       {
         pattern: /^MOVE$/,

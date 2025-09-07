@@ -48,11 +48,16 @@ The following flow chart illustrates the execution flow of the ToyRobot applicat
 - Created a contract for the commands [docs/command_pattern.md](docs/command_pattern.md)
 - Not using any advance Ruby meta programming as we want to display good OO design using SOLID principles
 - Command intepretation and command execution are seperate class
+- No FactoryBot for testing but almost at a point where I would introduce it
 
 ### Trade Offs
 
 - No explict interfaces or abstract classes as this is against Ruby standard conventions
 - The way that the input with params on the CLI (PLACE 2,3,NORTH) gets parsed and parse in as args made using named params for the command objects not possible (it is used everywhere else)
+
+### Alternatives considered
+- Using a state machine for the ToyRobot where each command has an implementation based on what state the robot is in (New, Placed)
+- Making an Abstract BaseCommand with methods not implemented. Also using the `inherited` hook to register the child classes
 
 #### Command Contract
 

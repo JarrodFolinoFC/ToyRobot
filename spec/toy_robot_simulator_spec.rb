@@ -21,8 +21,8 @@ RSpec.describe ToyRobotSimulator do
     before { simulator.run! }
 
     it 'processes commands and outputs the final robot state' do
-      expect(output_writer.messages).to include(
-        'Simulation(grid: Grid(height: 5, width: 5), x_coord: 0, y_coord: 1, direction: NORTH)'
+      expect(output_writer.messages.first).to eq(
+        "[ ][ ][ ][ ][ ]\n[ ][ ][ ][ ][ ]\n[ ][ ][ ][ ][ ]\n ⬆️[ ][ ][ ][ ]\n[ ][ ][ ][ ][ ]"
       )
     end
   end
