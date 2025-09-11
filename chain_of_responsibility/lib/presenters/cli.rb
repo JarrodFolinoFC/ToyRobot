@@ -6,8 +6,8 @@ require_relative '../infrastructure/file_source'
 require_relative '../infrastructure/std_out_writer'
 
 class CLI
-  def run!
-    input_source = ARGV.size == 1 ? FileSource.new(file_path: ARGV[0]) : StdInSource.new(stdin: $stdin)
+  def run!(args)
+    input_source = args.size == 1 ? FileSource.new(file_path: args[0]) : StdInSource.new(stdin: $stdin)
     puts "
         _____   _________   _________________
        |T O Y| |R O B O T| |S I M U L A T O R|
