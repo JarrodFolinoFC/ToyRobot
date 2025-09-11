@@ -16,17 +16,24 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install dependencies
+        run: bundle install
+        working-directory: chain_of_responsibility
+
       - name: Lint code for consistent style
         run: bundle exec rubocop -f github
+        working-directory: chain_of_responsibility
 
       - name: Run Rspec
         run: bundle exec rspec
+        working-directory: chain_of_responsibility
 
       - name: Check test coverage
         run: |
           COVERAGE=$(jq '.result.line' coverage/.last_run.json)
           COVERAGE_INT=${COVERAGE%.*}
           if [ "$COVERAGE_INT" -lt 80 ]; then
-            echo "Test coverage ($COVERAGE%) is below 80%"
-            exit 1
+          echo "Test coverage ($COVERAGE%) is below 80%"
+          exit 1
           fi
+        working-directory: chain_of_responsibility
